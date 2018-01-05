@@ -1,11 +1,12 @@
-#angular-loading-bar
+# angular-loading-bar
 
-##背景
+## 背景
 requirejs+Angularjs
 
-实现记录：
+## 实现记录：
 
-1.Requirejs中增加路径及依赖
+1. Requirejs中增加路径及依赖
+
 ```javascript
 require.config({
     baseUrl: './',
@@ -22,16 +23,17 @@ require.config({
 });
 ```
 2. 在module中注册
+
 ```javascript
 var myApp = angular.module('myApp', ['angular-loading-bar']);
 myApp .config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider){
     //cfpLoadingBarProvider.includeSpinner = false;  
-	// 自定义template，增加了个背景遮罩
+    // 自定义template，增加了个背景遮罩
 	cfpLoadingBarProvider.spinnerTemplate = ' <div class="loading-backdrop fade"></div><div id="loading-bar-spinner"><div class="spinner-icon"></div></div>';
  }]);
 ```
 
-3.CSS样式
+3. CSS样式
 
 ```css
 //加载条样式
@@ -68,14 +70,12 @@ myApp .config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider){
     background-color: #000;
     opacity: .5
 }
-````
-
-
-
-4.特别功能：
+```
+4. 特别功能：
 实现对某个请求屏蔽loading-bar
 
 **注意: $resoure中的名字`get`要和`resultAarry.get`名字一致！**
+
 ```javascript
 getXHR : function() {
   var defer = $q.defer(); 
@@ -101,7 +101,7 @@ $ npm install angular-loading-bar
 $ bower install angular-loading-bar
 
 
-###基本语法：
+### 基本语法：
 - spinner旋转的小圆圈开启或关闭(默认开启)
 
 ```javascript
@@ -133,7 +133,7 @@ angular.module('myApp', ['angular-loading-bar'])
   .config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
     cfpLoadingBarProvider.latencyThreshold = 500;
   }])
- ````
+```
 - 某些XHR请求屏蔽加载条出现
 
 ```javascript
@@ -147,7 +147,7 @@ $http.get('/status', {
 $http.post('/save', data, {
   ignoreLoadingBar: true
 });
-````
+```
 ```javascript
 // ignore particular $resource requests:
 .factory('Restaurant', function($resource) {
@@ -159,5 +159,5 @@ $http.post('/save', data, {
     }
   });
 });
-````
+```
 
