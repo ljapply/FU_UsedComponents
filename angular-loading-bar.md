@@ -74,7 +74,7 @@ myApp .config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider){
 4. 特别功能：
 实现对某个请求屏蔽loading-bar
 
-**注意: $resoure中的名字`get`要和`resultAarry.get`名字一致！**
+**注意: $resoure中的名字`get`要和`responseResult.get`名字一致！**
 
 ```javascript
 getXHR : function() {
