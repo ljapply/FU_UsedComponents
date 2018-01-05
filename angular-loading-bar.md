@@ -96,9 +96,11 @@ return defer.promise;
 ## 扩展
 https://github.com/chieffancypants/angular-loading-bar
 
-###下载:
-$ npm install angular-loading-bar
-$ bower install angular-loading-bar
+### 下载:
+
+> $ npm install angular-loading-bar
+
+> $ bower install angular-loading-bar
 
 
 ### 基本语法：
